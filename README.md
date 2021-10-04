@@ -67,7 +67,7 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 ![4](img/4.jpg)
 
 ```
-### GitHub###
+### GitHub ###
 1. Add webhook in GitHub project setting with jenkins server URL (pic 5,6)
 2. Check `GitHub hook trigger for GITScm polling` (pic 7)
 ```

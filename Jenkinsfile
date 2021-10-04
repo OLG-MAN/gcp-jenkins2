@@ -10,7 +10,7 @@ pipeline {
     }
 
     environment {
-        GIT_REPO = "git@git.epam.com:oleg_mandrychenko/gcp-jenkins.git"
+        GIT_REPO = "git@github.com:OLG-MAN/gcp-jenkins2.git"
     }
 
     stages {
@@ -27,7 +27,7 @@ pipeline {
                     mkdir ./build-${BUILD_NUMBER}
                     cd ./build-${BUILD_NUMBER}
                     git clone ${GIT_REPO}
-                    cd  ./gcp-jenkins/python_app/src
+                    cd  ./gcp-jenkins2/python_app/src
                     GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
                     zip ${WORKSPACE}/${GIT_BRANCH}-artifact-build-${BUILD_NUMBER}.zip *
                     git tag build-${BUILD_NUMBER} HEAD
@@ -63,7 +63,8 @@ pipeline {
             }
         }   
     }
-
+    
+    // Slack notification example
     // post {
     //     success {
     //         slackSend channel: '#ops-room',

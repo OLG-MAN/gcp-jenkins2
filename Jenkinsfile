@@ -31,6 +31,7 @@ pipeline {
                     GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
                     zip ${WORKSPACE}/${GIT_BRANCH}-artifact-build-${BUILD_NUMBER}.zip *
                     git tag build-${BUILD_NUMBER} HEAD
+                    git push --tags
                 '''
             }
         }

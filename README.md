@@ -50,9 +50,10 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 # Jenkins Pipeline in ./Jenkins file
 ```
 
-### 3. Add GitLab Webhook
+### 3. Add GitLab/GitHub Webhook
 
 ```
+### GitLab ###
 1. Install Gitlab plugin in jenkins and restart.
 2. In `job` configuration activate GitLab Build trigger. (pic 2)
 3. Add Jenkins integration in project repo. (pic 3)
@@ -64,6 +65,18 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 ![3](img/3.jpg)
 
 ![4](img/4.jpg)
+
+```
+### GitHub###
+1. Add webhook in GitHub project setting with jenkins server URL (pic 5,6)
+2. Check `GitHub hook trigger for GITScm polling` (pic 7)
+```
+
+![5](img/5.jpg)
+
+![6](img/6.jpg)
+
+![7](img/7.jpg)
 
 ### 4. Add slack shared library
 

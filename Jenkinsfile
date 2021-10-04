@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Test for skip') {
             steps {
-                echo "-------------JOB is start-------------"
+                    scmSkip(deleteBuild: true, skipPattern:'.*\\[SKIP_CI\\].*')
             }
         }
 
@@ -30,6 +30,7 @@ pipeline {
                     cd  ./gcp-jenkins/python_app/src
                     GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
                     zip ${WORKSPACE}/${GIT_BRANCH}-artifact-build-${BUILD_NUMBER}.zip *
+                    git tag build-${BUILD_NUMBER} HEAD
                 '''
             }
         }

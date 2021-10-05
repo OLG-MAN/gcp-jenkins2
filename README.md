@@ -44,7 +44,9 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 
 * Parameter environment
 * Making .zip artifact
+* Skip build option if have target pattern `SKIP_CI` in commit 
 * Parallel ping
+* "Build-number" tag to last commit after success build
 
 ```
 # Jenkins Pipeline in ./Jenkins file
@@ -80,7 +82,9 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 
 ### 4. Add slack shared library
 
-...
+* Install `Slack notification plugin` in Jenkins
+* Add library into pipeline
+* Add `post` step inthe end of pipeline
 
 ### 5. Move pipeline logic to shared library
 

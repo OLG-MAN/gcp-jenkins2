@@ -20,13 +20,13 @@ pipeline {
     stages {
         stage('Test for skip') {
             steps {
-                    scmSkip(deleteBuild: true, skipPattern:'.*\\[SKIP_CI\\].*')
+                scmSkip(deleteBuild: true, skipPattern:'.*\\[SKIP_CI\\].*')
             }
         }
 
         stage('lib test') {
             steps {
-                ping("8.8.8.8")
+                ping "8.8.8.8"
             }
         }
 

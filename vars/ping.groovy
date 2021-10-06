@@ -1,8 +1,9 @@
 #!/usr/bin/env groovy
 
-def call(string) {
-    ${env.PING_ADDR} = string
+def call(String addr = "addr") {
+    script {
         sh '''
-        echo ${env.IP_ADDR}
-    '''       
+        ping -c 2 ${addr}
+        '''   
+    }     
 }

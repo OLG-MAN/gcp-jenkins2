@@ -19,19 +19,13 @@ pipeline {
     stages {
         stage('Test for skip') {
             steps {
-                scmSkip(deleteBuild: true, skipPattern:'.*\\[SKIP_CI\\].*')
+                skipByCommit()
             }
         }
 
         stage('library test') {
             steps {
                 test()
-            }
-        }
-
-        stage('echo test') {
-            steps {
-                sayHello 'HI'
             }
         }
 

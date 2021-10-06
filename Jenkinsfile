@@ -32,7 +32,7 @@ pipeline {
         stage('Build') {
             steps {
                 sshagent(credentials: ['ssh-key-101']) {
-                    buildApp.buildApp()
+                    build()
                 }
             }
         }

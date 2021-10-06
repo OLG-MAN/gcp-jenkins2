@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def buildApp() {
+def call() {
   script {
         sh '''
         mkdir ./build-${BUILD_NUMBER}

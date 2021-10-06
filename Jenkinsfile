@@ -23,6 +23,12 @@ pipeline {
             }
         }
 
+        stage('lib test') {
+            steps {
+                test()
+            }
+        }
+
         stage('Build') {
             steps {
                 sshagent(credentials: ['ssh-key-101']) {

@@ -5,5 +5,4 @@ def call(string) {
         sh '''
         echo ${env.IP_ADDR}
     '''       
-  }
 }

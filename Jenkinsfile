@@ -14,7 +14,6 @@ pipeline {
 
     environment {
         GIT_REPO = "git@github.com:OLG-MAN/gcp-jenkins2.git"
-        PING_ADDR = ""
     }
 
     stages {
@@ -24,9 +23,15 @@ pipeline {
             }
         }
 
-        stage('lib test') {
+        stage('library test') {
             steps {
-                sayHello '8.8.8.8'
+                test()
+            }
+        }
+
+        stage('echo test') {
+            steps {
+                sayHello 'HI'
             }
         }
 

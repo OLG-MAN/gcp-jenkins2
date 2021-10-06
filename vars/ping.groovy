@@ -1,5 +1,7 @@
 #!/usr/bin/env groovy
 
+// Not working
 def call(String addr = 'google.com') {
-    echo "Hi, ${name}"
+   sh "ping -c 2 ${addr}"
 }
+

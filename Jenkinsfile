@@ -32,7 +32,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                test2()
+                buildingapp()
             }
         }
 
@@ -43,7 +43,7 @@ pipeline {
         }
 
         stage('Run parallel ping') {
-            parralel{
+            parallel{
                 stage('Ping 1') {
                     steps {
                         sh "ping -c 2 1688.com"
@@ -59,6 +59,12 @@ pipeline {
                         sh "ping -c 2 8.8.8.8"
                     }
                 }
+            }
+        }
+
+        stage('Run parallel ping 2') {
+            steps {
+                ping()
             }
         }
 

@@ -3,7 +3,7 @@
 def call() {
   script {
         sh '''
-        echo "TEST TEST"
+        echo "Shared library is WORKING.."
     '''       
   }
 }

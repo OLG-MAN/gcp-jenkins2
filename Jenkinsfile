@@ -32,7 +32,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                build()
+                test2()
             }
         }
 
@@ -43,7 +43,9 @@ pipeline {
         }
 
         stage('Run parallel ping') {
-            ping()
+            parallel{
+                ping()
+            }
         }
 
         stage('OK') {

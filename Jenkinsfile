@@ -26,7 +26,7 @@ pipeline {
 
         stage('lib test') {
             steps {
-                ping 'Oleg'
+                sayHello 'Joe'
             }
         }
 

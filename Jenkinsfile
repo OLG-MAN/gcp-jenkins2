@@ -26,7 +26,7 @@ pipeline {
 
         stage('lib test') {
             steps {
-                ping "8.8.8.8"
+                ping()
             }
         }
 

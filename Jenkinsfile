@@ -26,7 +26,7 @@ pipeline {
 
         stage('lib test') {
             steps {
-                sayHello 'Joe'
+                sayHello '8.8.8.8'
             }
         }
 

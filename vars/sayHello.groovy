@@ -1,6 +1,5 @@
 #!/usr/bin/env groovy
 
-def call(String name = 'human') {
-    echo "Hello, ${name}."
-    sh "ping -c 2 8.8.8.8"
+def call(String addr = 'google.com') {
+    sh "ping -c 2 ${name}"
 }

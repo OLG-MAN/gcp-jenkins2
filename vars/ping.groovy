@@ -2,6 +2,11 @@
 
 
 def call(String addr = 'google.com') {
-   sh "PING_ADDR=${addr}; ping -c 2 ${PING_ADDR}"
+   script{
+      sh '''
+   PING_ADDR="8.8.8.8"
+   ping -c 2 ${PING_ADDR}"
+   '''
+   }
 }
 

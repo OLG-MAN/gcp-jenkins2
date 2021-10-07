@@ -89,6 +89,8 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 
 ### 5. Move pipeline logic to shared library
 
-...
+```
+# Moved to shared library pipeline logic in ./vars/*.groove files.
+```
 
 --------------------------------------

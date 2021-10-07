@@ -62,6 +62,12 @@ pipeline {
             }
         }
 
+        stage('Parallel2') {
+            script {
+                buildingapp.pingAddr2 '1688.com', '2ip.me'
+            }
+        }
+
         stage('OK') {
             steps {
                 echo "-------------JOB is done. OK-------------"

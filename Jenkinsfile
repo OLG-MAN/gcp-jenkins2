@@ -19,6 +19,7 @@ pipeline {
         stage('Test for skip') {
             steps {
                 buildingapp.scmSkip2 'HELLO'
+            }
         }
 
         stage('Build App') {

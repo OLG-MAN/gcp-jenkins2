@@ -1,7 +1,4 @@
 @Library('library-101')_
-import buildingapp.scmSkip2()
-
-
 
 pipeline {
     agent {
@@ -21,7 +18,7 @@ pipeline {
     stages {
         stage('Test for skip') {
             steps {
-                scmSkip2()
+                buildingapp.scmSkip2()
             }
         }
 

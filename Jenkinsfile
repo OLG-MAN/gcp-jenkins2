@@ -23,11 +23,11 @@ pipeline {
             }
         }
 
-        stage('library test') {
-            steps {
-                ping()
-            }
-        }
+        // stage('library test') {
+        //     steps {
+        //         ping()
+        //     }
+        // }
 
         stage('Build') {
             steps {

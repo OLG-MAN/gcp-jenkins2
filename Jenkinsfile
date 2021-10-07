@@ -63,8 +63,10 @@ pipeline {
         }
 
         stage('Parallel2') {
-            script {
-                buildingapp.pingAddr2 '1688.com', '2ip.me'
+            parallel {
+                script {
+                    buildingapp.pingAddr2 '1688.com', '2ip.me'
+                }
             }
         }
 

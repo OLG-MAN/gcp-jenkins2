@@ -40,7 +40,9 @@ pipeline {
             parallel{
                 stage('Ping 1') {
                     steps {
-                        sh "ping -c 2 1688.com"
+                        script{
+                            buildingapp.pingAddr 'google.com'
+                        }
                     }
                 }
                 stage('Ping 2') {

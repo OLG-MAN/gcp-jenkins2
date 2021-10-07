@@ -15,6 +15,6 @@ def call() {
   }
 }
 
-def scmSkip2() {
-  scmSkip(deleteBuild: true, skipPattern:'.*\\[SKIP_CI\\].*')
+def scmSkip2(message) {
+  echo "${message}"
 }

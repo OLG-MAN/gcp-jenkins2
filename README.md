@@ -90,7 +90,32 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 ### 5. Move pipeline logic to shared library
 
 ```
-# Moved to shared library pipeline logic in ./vars/*.groove files.
+# Moved to shared library pipeline logic in ./vars/*.groovy files.
 ```
 
 --------------------------------------
+
+## Task 2 
+
+## Main goals.
+## Make Jenkins init script With:
+* Setup system message
+* setup global admin email address
+* setup smtp server
+* setup slack
+* setup github
+* Create three folders `/folder1`, `/folder1/folder2` and `/folder3`
+* for `folder1` configure your shared library
+* create credentials `USERNAME` and `PASSWORD`
+* create group and role `poweruser` and assing it to `folder1`
+* inside `folder3` create test-job with build permissions for `poweruser`
+
+## Solution 
+
+### 1. Make init script (No ready yet..)
+
+```
+# Jenkins init script(s) in ./init.groovy.d/*.groovy file(s) 
+```
+
+----------------------------------------

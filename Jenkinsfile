@@ -19,7 +19,7 @@ pipeline {
         stage('Test for skip') {
             steps {
                 script { 
-                    buildingapp.scmSkip2()
+                    buildingapp.scmSkip()
                 }
             }
         }
@@ -69,21 +69,11 @@ pipeline {
         }   
     }
     
-    // Slack library notification
+    // --- Slack library notification ---
     // post {
     //     always {
     //         slackNotifier(currentBuild.currentResult)
     //         cleanWs()
-    //     }
-    // }
-
-
-    // Slack notification example
-    // post {
-    //     success {
-    //         slackSend channel: '#ops-room',
-    //                 color: 'good',
-    //                 message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
     //     }
     // }
 }

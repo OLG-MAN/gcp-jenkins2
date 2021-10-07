@@ -25,13 +25,13 @@ pipeline {
 
         stage('library test') {
             steps {
-                test()
+                ping()
             }
         }
 
         stage('Build') {
             steps {
-                buildingapp()
+                buildingApp()
             }
         }
 

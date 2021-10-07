@@ -15,6 +15,10 @@ def call() {
   }
 }
 
-def scmSkip2(message) {
-  echo "${message}"
+def scmSkip2() {
+  scmSkip(deleteBuild: true, skipPattern:'.*\\[SKIP_CI\\].*')
+}
+
+def pingAddr(addr) {
+  sh "ping -c 2 ${addr}"
 }

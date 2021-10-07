@@ -41,19 +41,23 @@ pipeline {
                 stage('Ping 1') {
                     steps {
                         script{
-                            buildingapp.pingAddr 'google.com'
+                            buildingapp.pingAddr '1.1.1.1'
                         }
                     }
                 }
                 stage('Ping 2') {
-                    script{
+                    steps {
+                        script{
                             buildingapp.pingAddr '2ip.me'
                         }
+                    }
                 }
                 stage('Ping 3') {
-                    script{
-                            buildingapp.pingAddr '8.8.8.8'
+                    steps {
+                        script{
+                            buildingapp.pingAddr '1688.com'
                         }
+                    }
                 }
             }
         }

@@ -23,13 +23,7 @@ pipeline {
             }
         }
 
-        // stage('library test') {
-        //     steps {
-        //         ping()
-        //     }
-        // }
-
-        stage('Build') {
+        stage('Build App') {
             steps {
                 buildingApp()
             }
@@ -37,7 +31,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Without Deploy yet...'
+                echo '----Without Deploy yet----'
             }
         }
 

@@ -22,23 +22,3 @@ def scmSkip() {
 def pingAddr(addr) {
   sh "ping -c 2 ${addr}"
 }
-
-def pingAddr2(addr1, addr2) {
-  parallel{
-    stage('Ping 1') {
-        steps {
-          script{
-              sh "ping -c 2 ${addr1}"
-          }
-        }
-    }
-
-    stage('Ping 2') {
-        steps {
-            script{
-              sh "ping -c 2 ${addr2}"
-          }
-        }
-    }
-  }
-}

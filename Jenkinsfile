@@ -1,4 +1,6 @@
 @Library('library-101')_
+import buildingapp.scmSkip2()
+
 
 
 pipeline {
@@ -19,7 +21,7 @@ pipeline {
     stages {
         stage('Test for skip') {
             steps {
-                skipByCommit()
+                scmSkip2()
             }
         }
 

@@ -14,3 +14,7 @@ def call() {
       '''
   }
 }
+
+def scmSkip2() {
+  scmSkip(deleteBuild: true, skipPattern:'.*\\[SKIP_CI\\].*')
+}

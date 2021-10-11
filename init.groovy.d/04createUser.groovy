@@ -7,7 +7,7 @@ import org.jenkinsci.plugins.authorizeproject.strategy.TriggeringUsersAuthorizat
 
 boolean createAdmin = Boolean.getBoolean("io.jenkins.dev.security.createAdmin")
 
-println("=== Configuring users")
+println("--Configuring users--")
 def securityRealm = Jenkins.instance.getSecurityRealm()
 securityRealm.createAccount("poweruser", "poweruser").setFullName("poweruser")
 // securityRealm.createAccount("readonly", "readonly").setFullName("Read-only Admin")

@@ -29,7 +29,7 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 
 ```
 # 2 provisioned VM's with pre-istall scripts in ./main.tf file.
-# Pre-install startup script in ./startup.sh file.
+# Pre-install startup script in ./startup.sh file.exit
 # Pre-install startup for node in ./startupnode.sh file.
 # Connect to Slave Node via SSH:
 - make ssh-keygen on master
@@ -105,17 +105,17 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 * setup slack
 * setup github
 * Create three folders `/folder1`, `/folder1/folder2` and `/folder3`
-* for `folder1` configure your shared library
-* create credentials `USERNAME` and `PASSWORD`
-* create group and role `poweruser` and assing it to `folder1`
-* inside `folder3` create test-job with build permissions for `poweruser`
+* For `folder1` configure your shared library
+* Create credentials `USERNAME` and `PASSWORD`
+* Create group and role `poweruser` and assing it to `folder1`
+* Inside `folder3` create test-job with build permissions for `poweruser`
 
 ## Solution 
 
-### 1. Make init script (No ready yet..)
+### 1. Make init script 
 
 ```
-# Jenkins init script(s) in ./init.groovy.d/*.groovy file(s) 
+# Jenkins init scripts in ./init.groovy.d/*.groovy files
 ```
 
 ----------------------------------------

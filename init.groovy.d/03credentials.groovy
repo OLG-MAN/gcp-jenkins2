@@ -4,8 +4,7 @@ import com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey;
 import com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey.UsersPrivateKeySource;
 import com.cloudbees.plugins.credentials.CredentialsScope;
 
-println("Create Credentials");
-
+println("--Create Credentials--");
 env = System.getenv();
 
 String username = env['SSHCRED_USENAME'];

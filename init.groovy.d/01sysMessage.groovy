@@ -1,5 +1,3 @@
-#!/usr/bin/env groovy
-
 import jenkins.model.Jenkins
 
 def systemMessage = "JENKINS SYSTEM MESSAGE HERE"

@@ -12,30 +12,29 @@ import org.jenkinsci.plugins.workflow.libs.LibraryConfiguration
 import org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever
 import org.jenkinsci.plugins.workflow.job.WorkflowJob
 
-// Check folder1 exist
-println("=== Create folder1")
-if (Jenkins.instance.getItem("Production") != null) {
-    println("folder1 has been already initialized, skipping the step")
-    return
-}
 
-// Create folder1
-def folder = Jenkins.instance.createProject(Folder.class, "folder1")
+// Create folder1, folder1/folder2, folder3
+println("### Create folders")
+def folder1 = Jenkins.instance.createProject(Folder.class, "folder1")
+def folder2 = folder1.createProject(Folder.class, "folder2")
+def folder3 = Jenkins.instance.createProject(Folder.class, "folder3")
 
 
 // Include library to folder1
+println("### Create shared library for")
 def pipelineLibrarySource = new GitSCMSource("pipeline-library", "https://github.com/OLG-MAN/gcp-jenkins2.git", null, null, null, false)
 LibraryConfiguration lc = new LibraryConfiguration("pipeline-library", new SCMSourceRetriever(pipelineLibrarySource))
 lc.with {
     implicit = true
     defaultVersion = "master"
 }
-folder.addProperty(new FolderLibraries([lc]))
+folder1.addProperty(new FolderLibraries([lc]))
 FolderOwnershipHelper.setOwnership(folder, new OwnershipDescription(true, "poweruser"))
 
 
 // Sample project with a build flow from SCM
-WorkflowJob sampleProject = folder.createProject(WorkflowJob.class, "Remoting")
+println("### Create job for folder3")
+WorkflowJob sampleProject = folder3.createProject(WorkflowJob.class, "Job from GH")
 GitSCM source = new GitSCM("https://github.com/OLG-MAN/gcp-jenkins2.git")
 sampleProject.setDefinition(new CpsScmFlowDefinition(source, "Jenkinsfile"))
 JobOwnerHelper.setOwnership(sampleProject, new OwnershipDescription(true, "poweruser"))

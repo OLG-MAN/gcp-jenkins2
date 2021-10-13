@@ -1,15 +1,31 @@
-import com.cloudbees.plugins.credentials.SystemCredentialsProvider;
-import com.cloudbees.plugins.credentials.domains.Domain;
-import com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey;
-import com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey.UsersPrivateKeySource;
-import com.cloudbees.plugins.credentials.CredentialsScope;
+import jenkins.*
+import hudson.*
+import hudson.model.*
+import jenkins.model.*
+import com.cloudbees.plugins.credentials.*
+import com.cloudbees.plugins.credentials.common.*
+import com.cloudbees.plugins.credentials.domains.*
+import com.cloudbees.plugins.credentials.impl.*
 
-println("--Create Credentials--");
-env = System.getenv();
+// FOR TASK ONLY
+// For real use, there should be proper secret management.
 
-String username = env['SSHCRED_USENAME'];
-String id = env['SSHCRED_ID'];
-String passphrase = env['SSHCRED_PASSPHRASE'];
-String description = env['SSHCRED_DESCRIPTION'];
+credentialId="credential_reference_id_usr_pwd"
+credentialDescription="Example credential"
+credentialUser="username"
+credentialPassword="temp_password"
 
-SystemCredentialsProvider.getInstance().addCredentials(Domain.global(), new BasicSSHUserPrivateKey(CredentialsScope.GLOBAL, id, username, new UsersPrivateKeySource(), passphrase, description));
+instance = Jenkins.instance
+domain = Domain.global()
+store = instance.getExtensionList(
+  "com.cloudbees.plugins.credentials.SystemCredentialsProvider")[0].getStore()
+
+usernameAndPassword = new UsernamePasswordCredentialsImpl(
+  CredentialsScope.GLOBAL,
+  credentialId,
+  credentialDescription,
+  credentialUser,
+  credentialPassword
+)
+
+store.addCredentials(domain, usernameAndPassword)

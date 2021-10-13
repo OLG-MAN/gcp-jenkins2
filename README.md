@@ -112,10 +112,19 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 
 ## Solution 
 
-### 1. Make init script 
+### 1. Make init scripts 
 
 ```
 # Jenkins init scripts in ./init.groovy.d/*.groovy files
+```
+
+### 2. Make Configuratioin as a Code with CasC plugin
+(Not Ready yet)
+
+* Install and configure CasC plugin
+
+```
+# Jenkins casc script in ./casc/jenkins.yaml
 ```
 
 ----------------------------------------

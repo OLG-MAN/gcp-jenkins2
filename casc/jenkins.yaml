@@ -1,13 +1,3 @@
-credentials:
-  system:
-    domainCredentials:
-    - credentials:
-      - usernamePassword:
-          description: "Example credential"
-          id: "credential_reference_id_usr_pwd"
-          password: "{AQAAABAAAAAQDzeIE7MJcy/KI2EF+IRHfOLN6DcH0vDAlX3S1NS9mLc=}"
-          scope: GLOBAL
-          username: "username"
 jenkins:
   agentProtocols:
   - "JNLP4-connect"
@@ -89,6 +79,18 @@ jenkins:
   - all:
       name: "all"
   viewsTabBar: "standard"
+
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+          description: "Example credential"
+          id: "credential_reference_id_usr_pwd"
+          password: "{AQAAABAAAAAQDzeIE7MJcy/KI2EF+IRHfOLN6DcH0vDAlX3S1NS9mLc=}"
+          scope: GLOBAL
+          username: "username"
+
 security:
   apiToken:
     creationOfLegacyTokenEnabled: false
@@ -96,6 +98,7 @@ security:
     usageStatisticsEnabled: true
   sSHD:
     port: -1
+
 unclassified:
   buildDiscarders:
     configuredBuildDiscarders:
@@ -165,11 +168,13 @@ unclassified:
     allPipelines: false
     elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
     systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+
 tool:
   git:
     installations:
     - home: "git"
       name: "Default"
+      
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"

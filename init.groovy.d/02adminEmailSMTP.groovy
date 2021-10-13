@@ -43,6 +43,3 @@ extmailServer.defaultBody="\$PROJECT_NAME - Build # \$BUILD_NUMBER - \$BUILD_STA
 
 // Save the state
 instance.save()
-extmailServer.save()
-mailServer.save()
-jenkinsLocationConfiguration.save()

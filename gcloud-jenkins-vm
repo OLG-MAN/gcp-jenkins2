@@ -1,3 +1,5 @@
+### gcloud command for clgx-sandbox provisioning
+
 gcloud compute instances create omandrychenko-master --project=clgx-incubator-poc-d878 \
 --zone=us-central1-c --machine-type=e2-small \
 --network-interface=network-tier=PREMIUM,subnet=projects/clgx-network-sbx-77c3/regions/us-central1/subnetworks/clgx-app-us-c1-app-sbx-subnet \

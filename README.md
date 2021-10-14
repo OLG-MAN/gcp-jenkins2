@@ -43,13 +43,14 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 ### 2. Create declarative job. With:
 
 * Parameter environment
-* Making .zip artifact
+* Making .zip artifact with suffix $BRANCH_NAME and build_number
 * Skip build option if have target pattern `SKIP_CI` in commit 
 * Parallel ping
 * "Build-number" tag to last commit after success build
 
 ```
 # Jenkins Pipeline in ./Jenkins file
+# Update: Now part of logic moved to shared library
 ```
 
 ### 3. Add GitLab/GitHub Webhook
@@ -83,9 +84,9 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 
 ### 4. Add shared library, move pipeline logic 
 
-* Install needed plugins in Jenkins
-* create ./vars folder with script .groovy files
-* Add library into Jenkinsfile
+* Install needed plugins for Jenkins
+* Create ./vars folder with script .groovy files
+* Import shared library into Jenkinsfile
 
 ```
 # Pipeline logic moved to shared library in ./vars/*.groovy files.
@@ -120,7 +121,6 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 ## Task 3 (optional)
 
 ### Make Configuratioin as a Code with CasC plugin
-
 
 * Install and configure CasC plugin
 

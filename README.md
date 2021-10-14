@@ -80,17 +80,15 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 
 ![7](img/7.jpg)
 
-### 4. Add slack shared library
 
-* Install `Slack notification plugin` in Jenkins
-* create ./vars folder and create slack notification .groovy file
-* Add library into pipeline
-* Add `post` step in the end of pipeline file.
+### 4. Add shared library, move pipeline logic 
 
-### 5. Move pipeline logic to shared library
+* Install needed plugins in Jenkins
+* create ./vars folder with script .groovy files
+* Add library into Jenkinsfile
 
 ```
-# Moved to shared library pipeline logic in ./vars/*.groovy files.
+# Pipeline logic moved to shared library in ./vars/*.groovy files.
 ```
 
 --------------------------------------
@@ -117,13 +115,17 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 ```
 # Jenkins init scripts in ./init.groovy.d/*.groovy files
 ```
+----------------------------------------
 
-### 2. Make Configuratioin as a Code with CasC plugin
-(Not Ready yet)
+## Task 3 (optional)
+
+### Make Configuratioin as a Code with CasC plugin
+
 
 * Install and configure CasC plugin
 
 ```
+# (Not Ready yet)
 # Jenkins casc script in ./casc/jenkins.yaml
 ```
 

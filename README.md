@@ -29,7 +29,7 @@ docker run -it --rm -v ${PWD}:/work -w /work ansible-container:v1
 
 ```
 # 2 provisioned VM's with pre-istall scripts in ./main.tf file.
-# Pre-install startup script in ./startup.sh file.exit
+# Pre-install startup script in ./startup.sh file.
 # Pre-install startup for node in ./startupnode.sh file.
 # Connect to Slave Node via SSH:
 - make ssh-keygen on master

@@ -16,3 +16,4 @@ RUN apt-get update && apt-get install terraform
 # Create TF autocomplete
 RUN touch ~/.bashrc
 RUN terraform -install-autocomplete
+

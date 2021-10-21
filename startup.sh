@@ -24,3 +24,4 @@ HERE
 # sudo yum install epel-release java-11-openjdk-devel -y
 # sudo yum install jenkins -y
 # sudo systemctl daemon-reload
+

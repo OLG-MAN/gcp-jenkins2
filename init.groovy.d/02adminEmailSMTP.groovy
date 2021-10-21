@@ -1,5 +1,7 @@
-import hudson.model.*
+import jenkins.*
 import jenkins.model.*
+import hudson.*
+import hudson.model.*
 import hudson.tools.*
 import hudson.tasks.Mailer
 import hudson.util.Secret

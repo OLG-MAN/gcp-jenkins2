@@ -113,24 +113,24 @@ rbas.addRole(RoleType.Global, poweruserRole);
 
 // -- Roles -> Groups/Users --
 
-access.admins.each { l ->
-  println("Granting admin role to ${l}")
-  rbas.assignRole(RoleType.Global, adminRole, l)
+access.admins.each { grantRole ->
+  println("Granting admin role to ${grantRole}")
+  rbas.assignRole(RoleType.Global, adminRole, grantRole)
 }
 
-access.builders.each { l ->
-  println("Granting builder role to ${l}")
-  rbas.assignRole(RoleType.Global, buildersRole, l)
+access.builders.each { grantRole ->
+  println("Granting builder role to ${grantRole}")
+  rbas.assignRole(RoleType.Global, buildersRole, grantRole)
 }
 
-access.readers.each { l ->
-  println("Granting read role to ${l}")
-  rbas.assignRole(RoleType.Global, readRole, l)
+access.readers.each { grantRole ->
+  println("Granting read role to ${grantRole}")
+  rbas.assignRole(RoleType.Global, readRole, grantRole)
 }
 
-access.poweruser.each { l ->
-  println("Granting poweruser folder role to ${l}")
-  rbas.assignRole(RoleType.Global, poweruserRole, l)
+access.poweruser.each { grantRole ->
+  println("Granting poweruser folder role to ${grantRole}")
+  rbas.assignRole(RoleType.Global, poweruserRole, grantRole)
 }
 
 jenkins.save()

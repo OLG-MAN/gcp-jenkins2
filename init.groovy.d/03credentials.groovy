@@ -1,11 +1,7 @@
-import jenkins.*
-import hudson.*
 import hudson.model.*
 import jenkins.model.*
 import com.cloudbees.plugins.credentials.*
-import com.cloudbees.plugins.credentials.common.*
-import com.cloudbees.plugins.credentials.domains.*
-import com.cloudbees.plugins.credentials.impl.*
+
 
 // FOR TASK ONLY
 // For real use, there should be proper secret management.

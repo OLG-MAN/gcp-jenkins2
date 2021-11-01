@@ -1,18 +1,13 @@
-import jenkins.*
 import jenkins.model.*
-import hudson.*
-import hudson.model.*
-import hudson.tools.*
 import hudson.tasks.Mailer
 import hudson.util.Secret
 
 println "--setting admin email--"
 
 def adminEmail = 'admin.jenkins@admin.jenkins.com'
-def jlc = JenkinsLocationConfiguration.get()
-jlc.setAdminAddress(adminEmail)
-jlc.save()
-
+def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
+jenkinsLocationConfiguration.setAdminAddress(adminEmail)
+jenkinsLocationConfiguration.save()
 
 println "--setting SMTP server--"
 
@@ -25,7 +20,6 @@ def SMTPHost = "smtp.server.qwerty8900.com"
 // Constants
 def instance = Jenkins.getInstance()
 def mailServer = instance.getDescriptor("hudson.tasks.Mailer")
-def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
 def extmailServer = instance.getDescriptor("hudson.plugins.emailext.ExtendedEmailPublisher")
 
 // E-mail Server
@@ -45,5 +39,3 @@ extmailServer.defaultBody="\$PROJECT_NAME - Build # \$BUILD_NUMBER - \$BUILD_STA
 
 // Save the state
 instance.save()
-
-
